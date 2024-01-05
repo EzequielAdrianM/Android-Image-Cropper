@@ -10,36 +10,6 @@ buildscript {
   }
 }
 
-plugins {
-  alias(libs.plugins.codequalitytools)
-}
-
-codeQualityTools {
-  checkstyle {
-    enabled = false // Kotlin only.
-  }
-  pmd {
-    enabled = false // Kotlin only.
-  }
-  ktlint {
-    toolVersion = libs.versions.ktlint.get()
-    experimental = true
-  }
-  detekt {
-    enabled = false // Don"t want.
-  }
-  cpd {
-    enabled = false // Kotlin only.
-  }
-  lint {
-    lintConfig = rootProject.file("lint.xml")
-    checkAllWarnings = true
-  }
-  kotlin {
-    allWarningsAsErrors = true
-  }
-}
-
 allprojects {
   repositories {
     google()
